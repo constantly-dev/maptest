@@ -1,6 +1,8 @@
-import Map from './Map';
+// import MapTest from './MapTest';
+import ManyData from './ManyData';
 function App() {
-  return <Map></Map>;
+  // return <MapTest />;
+  return <ManyData />;
 }
 
 export default App;

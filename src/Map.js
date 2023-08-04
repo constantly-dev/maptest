@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import house from '../src/house.png';
+import house from '../src/assets/images/house.png';
 import { AxiosGet } from './api/Get';
 const Map = () => {
   const [markerData, setMarkerData] = useState([]);
@@ -44,13 +44,14 @@ const Map = () => {
     // 마커를 container 맵에 추가
     markerTest.setMap(map);
 
-    return () => {
-      // 컴포넌트 언마운트 시 마커를 지도에서 제거
-      markerTest.setMap(null);
-    };
+    // return () => {
+    //   // 컴포넌트 언마운트 시 마커를 지도에서 제거
+    //   markerTest.setMap(null);
+    // };
   }, [location.center.lat, location.center.lng]);
 
   useEffect(() => {
+    console.log(navigator.geolocation);
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
